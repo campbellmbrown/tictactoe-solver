@@ -1,7 +1,9 @@
-function [newPlayer] = SwitchPlayer(currentPlayer)
+function [player, opponent] = SwitchPlayer(currentPlayer)
     if currentPlayer == 'X'
-        newPlayer = 'O';
-    elseif currentPlayer == 'O'
-        newPlayer = 'X';
+        player = 'O';
+        opponent = 'X';
+    else
+        player = 'X';
+        opponent = 'O';
     end
 end
