@@ -1,16 +1,22 @@
-runs = 20000;
-winner = zeros(1, runs);
+runs = 10000;
+r_random = zeros(1, runs);
+r_strat1 = zeros(1, runs);
 
 for i = 1:runs
-   winner(i) = RandomPlacement(3, 'X');
+   r_random(i) = RandomPlacement(4, 'X');
+   r_strat1(i) = Strategy1(4, 'X');
 end
-
-xWins = sum(winner == 'X');
-oWins = sum(winner == 'O');
-ties = sum(winner == 0);
 
 figure;
 labels = {'X Wins','O Wins','Ties'};
-pie([xWins, oWins, ties])
+
+t = tiledlayout(1,2);
+ax1 = nexttile;
+pie(ax1,[sum(r_random == 'X'), sum(r_random == 'O'), sum(r_random == 0)], '%.1f%%')
 legend(labels)
-title(['Random Placements (X Starting, n = ' num2str(runs) ')']);
+title({'Random placements', ['(X starting, n = ' num2str(runs) ')']});
+
+ax2 = nexttile;
+pie(ax2,[sum(r_strat1 == 'X'), sum(r_strat1 == 'O'), sum(r_strat1 == 0)], '%.1f%%')
+legend(labels)
+title({'Looking for a row with two of the', 'same and an empty space', ['(X starting, n = ' num2str(runs) ')']});
