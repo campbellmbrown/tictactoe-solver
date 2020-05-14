@@ -1,7 +1,5 @@
 function [board] = BlockOpponent(n, board, player, opponent)
 
-
-
 % Look for winning rows and columns
 for i = 1:n
     if sum(board(i,:)==opponent)==n-1 && sum(board(i,:)==0)==1

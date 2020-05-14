@@ -30,7 +30,7 @@ while (~gameFinished)
             
             [winner, gameFinished] = CheckWinner(board, n, player);
         end
-    [player, opponent] = SwitchPlayer(player);
+    [player, opponent] = SwitchPlayer(player, opponent);
 end
 
 end

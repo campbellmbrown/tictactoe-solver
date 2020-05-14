@@ -1,10 +1,11 @@
-function [winner] = Strategy1(n, startingPlayer)
+function [winner] = Strategy1(n, startingPlayer, startingOpponent)
 % This stategy involves placing the player's symbol in a random empty
 % position. There is no other logic taking place.
 
 % Initialising board, starting player, etc.
 board = zeros(n, n);
 player = startingPlayer;
+opponent = startingOpponent;
 winner = 0;
 gameFinished = false;
 
@@ -21,7 +22,7 @@ while (~gameFinished)
             % Check to see if the current player has obtained n in a row
             [winner, gameFinished] = CheckWinner(board, n, player);
         end
-    [player, ~] = SwitchPlayer(player);
+    [player, opponent] = SwitchPlayer(player, opponent);
 end
 
 end

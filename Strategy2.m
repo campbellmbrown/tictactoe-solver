@@ -1,4 +1,4 @@
-function [winner] = Strategy2(n, startingPlayer)
+function [winner] = Strategy2(n, startingPlayer, startingOpponent)
 % This stategy involves looking for a scenario where there are two of the
 % players symbols and one empty space in a row, column, or diagonal. If
 % there aren't, a random position is chosen.
@@ -6,6 +6,7 @@ function [winner] = Strategy2(n, startingPlayer)
 % Initialising board, starting player, etc.
 board = zeros(n, n);
 player = startingPlayer;
+opponent = startingOpponent;
 winner = 0;
 gameFinished = false;
 
@@ -27,7 +28,7 @@ while (~gameFinished)
             
             [winner, gameFinished] = CheckWinner(board, n, player);
         end
-    [player, ~] = SwitchPlayer(player);
+    [player, opponent] = SwitchPlayer(player, opponent);
 end
 
 end
