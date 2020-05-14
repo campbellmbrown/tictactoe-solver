@@ -1,7 +1,7 @@
+runs = 20000;
+winner = zeros(1, runs);
 
-winner = zeros(1, 1000);
-
-for i = 1:10000
+for i = 1:runs
    winner(i) = RandomPlacement(3, 'X');
 end
 
@@ -13,4 +13,4 @@ figure;
 labels = {'X Wins','O Wins','Ties'};
 pie([xWins, oWins, ties])
 legend(labels)
-title('Wins of Random Placements in Tic-tac-toe (X Starting, n = 10,000)');
+title(['Random Placements (X Starting, n = ' num2str(runs) ')']);

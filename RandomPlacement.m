@@ -1,4 +1,6 @@
 function [winner] = RandomPlacement(n, startingPlayer)
+% This stategy involves placing the player's symbol in a random empty
+% position. There is no other logic taking place.
 
 % Initialising board, starting player, etc.
 board = zeros(n, n);
