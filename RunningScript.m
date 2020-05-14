@@ -9,14 +9,14 @@ end
 
 figure;
 labels = {'X Wins','O Wins','Ties'};
-
 t = tiledlayout(1,2);
+
 ax1 = nexttile;
-pie(ax1,[sum(r_random == 'X'), sum(r_random == 'O'), sum(r_random == 0)], '%.1f%%')
+pie(ax1,[sum(r_random == 'X'), sum(r_random == 'O'), sum(r_random == 0)], '%.1f%%');
 legend(labels)
-title({'Random placements', ['(X starting, n = ' num2str(runs) ')']});
+title({'Random Placements', ['(X starting, n = ' num2str(runs) ')']});
 
 ax2 = nexttile;
-pie(ax2,[sum(r_strat1 == 'X'), sum(r_strat1 == 'O'), sum(r_strat1 == 0)], '%.1f%%')
+pie(ax2,[sum(r_strat1 == 'X'), sum(r_strat1 == 'O'), sum(r_strat1 == 0)], '%.1f%%');
 legend(labels)
-title({'Looking for a row with two of the', 'same and an empty space', ['(X starting, n = ' num2str(runs) ')']});
+title({'Looking for Almost Complete Rows', ['(X starting, n = ' num2str(runs) ')']});
