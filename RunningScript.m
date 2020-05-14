@@ -1,0 +1,1 @@
+winner = RandomPlacement(3);
